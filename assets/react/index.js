@@ -21,7 +21,6 @@ const router = (
             <Route path="/" component={App}>
 
             </Route>
-            <Route path="*" component={NotFound}/>
         </Router>
     </Provider>
 );
