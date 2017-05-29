@@ -4,9 +4,11 @@ import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 
 /* Routing / Redux / store imports */
-import { Router, Route, IndexRoute } from 'react-router';
+import { BrowserRouter } from 'react-router-dom';
+
+import { Route, Switch } from 'react-router';
 import { Provider } from 'react-redux';
-import store, { history } from './store';
+import store  from './store';
 
 /* CSS import */
 import '../sass/style.scss';
@@ -17,11 +19,12 @@ import NotFound from './components/404/';
 
 const router = (
     <Provider store={store}>
-        <Router history={history}>
-            <Route path="/" component={App}>
-
-            </Route>
-        </Router>
+        <BrowserRouter>
+            <Switch>
+                <Route exact path="/" component={App}/>
+                <Route path="*" component={NotFound}/>
+            </Switch>
+        </BrowserRouter>
     </Provider>
 );
 

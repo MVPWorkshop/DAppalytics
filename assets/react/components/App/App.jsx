@@ -9,9 +9,12 @@ class App extends React.Component{
     render(){
         return(
             <div className="app-wrapper">
-                {/* Components passed from react-router */}
                 <main className="main-content">
-                    {React.cloneElement({...this.props}.children, {...this.props})}
+                    <h1>Hello world!</h1>
+                    {/* Components passed from react-router */}
+                    {/*
+                    <Route path={"x"} component={y}/>
+                    */}
                 </main>
             </div>
         )

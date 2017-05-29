@@ -4,7 +4,7 @@
   "description": "",
   "main": "./assets/react/index.js",
   "scripts": {
-    "start": "node webpack.dev-server.js --progress --colors --inline",
+    "start": "node webpack.dev-server.js",
     "production": "webpack --config ./webpack.production.js -p"
   },
   "author": "Devana Labs",
@@ -27,19 +27,30 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
+    "babel-loader": "^7.0.0",
     "babel-plugin-transform-runtime": "^6.15.0",
     "babel-preset-stage-2": "^6.18.0",
     "babel-register": "^6.14.0",
+    "css-loader": "^0.28.3",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.11.1",
     "html-webpack-plugin": "^2.24.1",
-    "react": "^15.3.0",
+    "npm": "^4.6.1",
+    "react": "^15.5.4",
     "react-addons-transition-group": "^15.4.2",
     "react-autosuggest": "^9.0.1",
-    "react-dom": "^15.3.0",
-    "react-redux": "^4.4.6",
-    "react-router": "^3.0.0",
+    "react-dom": "^15.5.4",
+    "react-hot-loader": "^3.0.0-beta.7",
+    "react-redux": "^5.0.5",
+    "react-router": "^4.1.1",
+    "react-router-dom": "^4.1.1",
     "react-router-redux": "^4.0.7",
     "redux": "^3.6.0",
     "redux-thunk": "^2.1.0",
-    "url-loader": "^0.5.7"
+    "sass-loader": "^6.0.5",
+    "style-loader": "^0.18.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^2.6.1",
+    "webpack-dev-server": "^2.4.5"
   }
 }
