@@ -5,7 +5,7 @@ let ExtractTextPlugin = require('extract-text-webpack-plugin');
 let config = {
     devtool: 'source-map',
     entry: [
-        './assets/react/'
+        './src/react/'
     ],
     output: {
         path: path.join(__dirname, './public/web/dist'),
@@ -19,7 +19,7 @@ let config = {
         rules: [
             {
                 test: /\.jsx?$/,
-                include: path.join(__dirname, 'assets/react'),
+                include: path.join(__dirname, 'src/react'),
                 use: [
                     {
                         loader: "babel-loader",

@@ -6,7 +6,7 @@ let config = {
             'react-hot-loader/patch',
             'webpack/hot/only-dev-server',
             'webpack-dev-server/client?http://localhost:8080',
-            './assets/react/'
+            './src/react/'
     ],
     devServer: {
         contentBase: path.join(__dirname, './public/'),
@@ -23,7 +23,7 @@ let config = {
         rules: [
             {
                 test: /\.jsx?$/,
-                include: path.join(__dirname, 'assets/react'),
+                include: path.join(__dirname, 'src/react'),
                 use: [
                     {
                         loader: "babel-loader",

@@ -1,7 +1,13 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
+import { allCalls } from './allCalls';
+import { callsByFunc } from './callsByFunc';
+import { etherReceived } from './etherReceived';
 
 const appReducer = combineReducers({
+    etherReceived,
+    callsByFunc,
+    allCalls,
     routing: routerReducer
 });
 
