@@ -1,6 +1,11 @@
 export const callsByFunc = (state = {
     isFetching: false,
-    data: [],
+    data: [
+        {date: '2017-05-23', function: 'doSomething', calls: 7},
+        {date: '2017-05-23', function: 'doOtherThing', calls: 3},
+        {date: '2017-05-24', function: 'doSomething', calls: 10},
+        {date: '2017-05-24', function: 'doOtherThing', calls: 5}
+    ],
     error: null
 }, action) => {
     switch (action.type) {

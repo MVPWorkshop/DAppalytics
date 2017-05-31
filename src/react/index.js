@@ -13,8 +13,8 @@ import store  from './store';
 /* CSS import */
 import '../sass/style.scss';
 
-/* App components import */
-import App from './components/App/App';
+/* Dashboard components import */
+import App from './components/Dashboard/Dashboard';
 import NotFound from './components/404/';
 
 const router = (

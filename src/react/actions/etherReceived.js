@@ -26,7 +26,7 @@ export const ether_received_error = (error) => {
 
 export const etherReceived = (ethAddr) => {
     let config = {
-        method: "POST",
+        method: "GET",
         headers: {
             "Content-Type": "application/x-www-form-urlencoded"
         }

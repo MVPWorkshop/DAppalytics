@@ -1,5 +1,6 @@
 let webpack = require('webpack');
 let path = require('path');
+let OpenBrowserPlugin = require('open-browser-webpack-plugin');
 
 let config = {
     entry: [
@@ -81,7 +82,8 @@ let config = {
         ]
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new OpenBrowserPlugin({ url: 'http://localhost:8080' })
     ]
 };
 

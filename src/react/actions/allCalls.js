@@ -22,7 +22,7 @@ export const all_calls_error = (error) => {
 };
 
 // response : [ {date: 2017-05-23, calls: 10}, {date: 2017-05-24, calls: 15} ]
-export const getAllCalls = (ethAddr) => {
+export const allCalls = (ethAddr) => {
     let config = {
         method: "GET",
         headers: {
