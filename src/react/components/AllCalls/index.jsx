@@ -1,35 +1,28 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Line as LineChart } from 'react-chartjs';
+import {ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts';
 
 
-const alterData = (data) => {
-    return {
-        labels: data.map(item => item.date),
-        datasets: [{
-            label: "Num of Calls",
-            fillColor: "rgba(0,0,255,0.1)",
-            strokeColor: "#3f63dd",
-            pointColor: "#3f63dd",
-            pointStrokeColor: "#3f63dd",
-            pointHighlightFill: "#fff",
-            pointHighlightStroke: "rgba(220,220,220,1)",
-            data: data.map(item => item.calls)
-        }]
+const options = {
+    responsive: true,
+    title: {
+        display: true,
+        text: 'Custom Chart Title'
     }
 };
 
 const AllCalls = ({ data }) => (
-    <div className="all-calls widget">
-        <LineChart type="line"
-                   data={alterData(data)}
-                   redraw
-                   options={{
-                        responsive: true
-                    }}
-                   width="600"
-                   height="250"/>
-    </div>
+    <ResponsiveContainer width="100%" height={300}>
+        <LineChart width={600} height={300} data={data}
+                   margin={{top: 5, right: 30, left: 20, bottom: 5}}>
+            <XAxis dataKey="date"/>
+            <YAxis/>
+            <CartesianGrid strokeDasharray="3 3"/>
+            <Tooltip/>
+            <Legend />
+            <Line type="monotone" dataKey="calls" stroke="#3f63dd" activeDot={{r: 8}}/>
+        </LineChart>
+    </ResponsiveContainer>
 );
 
 const mapStateToProps = state => state.allCalls;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Bar as BarChart } from 'react-chartjs';
+import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 
 const alterData = (data) => {
     return {
@@ -16,16 +16,17 @@ const alterData = (data) => {
 };
 
 const EtherReceived = ({ data }) => (
-    <div className="ether-received widget">
-        <BarChart type="line"
-                  data={alterData(data)}
-                  redraw
-                  options={{
-                      responsive: true
-                  }}
-                  width="600"
-                  height="250"/>
-    </div>
+    <ResponsiveContainer width="100%" height={300}>
+        <BarChart width={600} height={300} data={data}
+                  margin={{top: 5, right: 30, left: 20, bottom: 5}}>
+            <XAxis dataKey="etherReceived"/>
+            <YAxis/>
+            <CartesianGrid strokeDasharray="3 3"/>
+            <Tooltip/>
+            <Legend />
+            <Bar dataKey="etherReceived" fill="#3f63dd" />
+        </BarChart>
+    </ResponsiveContainer>
 );
 
 const mapStateToProps = state => state.etherReceived;

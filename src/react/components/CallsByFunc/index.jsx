@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Pie as PieChart } from 'react-chartjs';
+import { ResponsiveContainer, PieChart, Pie, Legend, Tooltip } from 'recharts';
 
 
 const shadeColor = (color, percent) => {
@@ -21,15 +21,13 @@ const alterData = (data) => {
 };
 
 const CallsByFunc = ({ data }) => (
-    <div className="calls-by-func widget">
-        <PieChart data={alterData(data)}
-                  redraw
-                  options={{
-                      responsive: true
-                  }}
-                  width="600"
-                  height="250"/>
-    </div>
+    <ResponsiveContainer width="100%" height={300}>
+        <PieChart>
+            <Pie label={({ name }) => `${name}`} dataKey="calls" data={data}  outerRadius={130} fill="#3f63dd"/>
+            <Legend />
+            <Tooltip payload={data} label="name" labelFormatter={({ name }) => `${name}`}/>
+        </PieChart>
+    </ResponsiveContainer>
 );
 
 const mapStateToProps = state => state.callsByFunc;
