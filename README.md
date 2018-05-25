@@ -1,6 +1,6 @@
 # DAppalytics
 
-Dappalytics shows analytics for Smart Contracts on Etherium.
+Dappalytics shows analytics for Smart Contracts on Ethereum.
 
 In the future this app will show Analytics (analytics like in google analytics jusr for DApps), but currently app's current focus is creating relevant metrics for analyzing ICO's. The first set of metrics that needs to be developed:
 
